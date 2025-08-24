@@ -1,0 +1,15 @@
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.vscode/
+
+# Data
+data
+
+# Env / Secrets
+.env
+.env.*
+
+# Docker artefacts
+pgdata/
+*.log

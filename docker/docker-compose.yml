@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: pg_pruebas
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d   # ejecuta *.sql al arranque
+      - ../data:/import                  # CSV visibles desde COPY
+    ports:
+      - "15432:5432"
+
+volumes:
+  pgdata:
